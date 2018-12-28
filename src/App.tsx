@@ -28,6 +28,22 @@ class App extends React.Component {
 
 
   public render() {
+    const win: any = window;
+    const browser = (function(agent){
+      switch(true){
+        case agent.indexOf("edge") > -1: return "edge";
+        case agent.indexOf("opr") > -1 && !!win.opr: return "opera";
+        case agent.indexOf("chrome") > -1 && !!win.chrome: return "chrome";
+        case agent.indexOf("trident") > -1: return "ie";
+        case agent.indexOf("firefox") > -1: return "firefox";
+        case agent.indexOf("safari") > -1: return "safari";
+        default: return "other";
+      }
+    })(window.navigator.userAgent.toLowerCase());
+    if (browser != 'chrome') {
+      alert('请使用Chrome浏览器');
+      return null;
+    }
     const width = window.innerWidth, height = window.innerHeight;
     return (
      <Earth width={width} height={height} airlines={this.airlines} cities={this.cities}
