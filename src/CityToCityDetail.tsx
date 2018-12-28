@@ -129,7 +129,7 @@ class CityToCityDetail extends React.Component<{}, {}> {
       .sum(function (d: any) { return d.size})
     ;
   
-    const ys = [0, 150, 190, 230];
+    const ys = [0, radius-60, radius-40, radius - 20];
     function innerR(d: any) {
       return ys[d.depth] + 1
     }

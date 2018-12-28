@@ -42,7 +42,7 @@ class App extends React.Component {
     })(window.navigator.userAgent.toLowerCase());
     if (browser != 'chrome') {
       alert('请使用Chrome浏览器');
-      return null;
+      return <p>请使用Chrome浏览器</p>;
     }
     const width = window.innerWidth, height = window.innerHeight;
     return (
