@@ -159,7 +159,7 @@ class CityToCityDetail extends React.Component<{}, {}> {
       .attr("d", arc as any)
       .style('stroke', '#fff')
       .attr("fill-rule", "evenodd")
-      .style("opacity", 1)
+      .style("opacity", 0.5)
       .style("fill", (d) => {
         return color(d.data.name)
       })
@@ -168,7 +168,11 @@ class CityToCityDetail extends React.Component<{}, {}> {
     ;
     path.append('text')
       .filter((d: any) => { return d.parent; })
-      .text(d => d.data.name)
+      .text((d: any) => {
+        const rate = d.value / d.parent.value * 150;
+        const len = d.data.name.length;
+        return len > rate? '' : d.data.name;
+      })
       .attr('dx', d => {
         const len = d.data.name.length;
         return -len * 4.5;
@@ -192,7 +196,7 @@ class CityToCityDetail extends React.Component<{}, {}> {
       .filter(node => {
         return sequenceArray.indexOf(node) >= 0
       })
-      .style('opacity', 0.8);
+      .style('opacity', 1);
     
     if (d.depth==1) {
       d3.select('#citys_detail_help1')
@@ -210,7 +214,7 @@ class CityToCityDetail extends React.Component<{}, {}> {
   
   private onMouseLeave = () => {
     this.group.selectAll('path')
-      .style('opacity', 0.8);
+      .style('opacity', 0.5);
   };
   
   private computeTextRotation = (d: any) => {

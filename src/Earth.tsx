@@ -30,10 +30,10 @@ interface Props {
   }
 }
 
-const OCEAN_COLOR = '#708090';
+const OCEAN_COLOR = '#696969';
 const LAND_COLOR  = '#000000';
 const AIRLINE_COLOR = '#ffffff';
-const HIGHLIGHT_AIRLINE_COLOR = '#61ca90';
+const HIGHLIGHT_AIRLINE_COLOR = '#0a0';
 const NOT_HIGHLIGHT_AIRLINE_COLOR = '#555';
 const TRANSPARENT_AIRLINE_COLOR = 'rgba(200, 200, 200, 0.1)';
 const AIRLINE_WIDTH = 0.6;
@@ -43,7 +43,7 @@ const HIGHLIGHT_COLOR = '#470024';
 const POINT_COLOR = '#86cd9f';
 const HIGHLIGHT_POINT_COLOR = '#FFFF00';
 const NOT_HIGHLIGHT_POINT_COLOR = '#333';
-const BUBBLE_IN_COLOR = 'rgb(128,0,0, 0.8)';
+const BUBBLE_IN_COLOR = 'rgb(255, 48, 48, 0.8)';
 const BUBBLE_OUT_COLOR = 'rgb(255,255,224, 0.8)';
 
 const CHINA_ID = 156;
@@ -134,7 +134,7 @@ class Earth extends React.Component<Props, {}> {
       <div id='globe'>
         <canvas id='backgroundCanvas'/>
         <canvas id='canvas'/>
-        <div className="Container right_top_container">
+        <div className="right_top_container">
           <CityDetail showCityToCityDetail={this.showCityToCityDetail} ref={(r) => this.cityDetail = r!}/>
           <CityToCityDetail ref={(r) => this.cityToCityDetail = r!}/>
         </div>
@@ -169,7 +169,7 @@ class Earth extends React.Component<Props, {}> {
           </div>
           <div className="Switch" title={"航线出发城市气泡图"}>
             <input defaultChecked={false} className="Switch-checkbox" id="showBubblesOut" type="checkbox"
-                   onChange={() => this.showBubblesIn = !this.showBubblesIn}/>
+                   onChange={() => this.showBubblesOut = !this.showBubblesOut}/>
             <label className="Switch-label" htmlFor="showBubblesOut">
               <span className="Switch-inner" data-on="气泡图1" data-off="气泡图1"/>
               <span className="Switch-switch"/>
@@ -177,7 +177,7 @@ class Earth extends React.Component<Props, {}> {
           </div>
           <div className="Switch" title={"航线到达城市气泡图"}>
             <input defaultChecked={false} className="Switch-checkbox" id="showBubblesIn" type="checkbox"
-                   onChange={() => this.showBubblesOut = !this.showBubblesOut}/>
+                   onChange={() => this.showBubblesIn = !this.showBubblesIn}/>
             <label className="Switch-label" htmlFor="showBubblesIn">
               <span className="Switch-inner" data-on="气泡图2" data-off="气泡图2"/>
               <span className="Switch-switch"/>
@@ -213,25 +213,6 @@ class Earth extends React.Component<Props, {}> {
     const path = this.path;
   
     context.clearRect(0, 0, this.width, this.height);
-  
-    // legend
-    const x = this.width - 300, y = 20, r = 20, dy = 45;
-    if (this.showBubblesOut) {
-      context.beginPath();
-      context.font = '18px Airal';
-      context.fillStyle = BUBBLE_OUT_COLOR;
-      context.arc(x, y, r, 0, 2 * Math.PI);
-      context.fillText('航班出发城市（越大航班数越多）', x + r + 10, y + 5);
-      context.fill();
-    }
-    if (this.showBubblesIn) {
-      context.beginPath();
-      context.fillStyle = BUBBLE_IN_COLOR;
-      context.font = '18px Airal';
-      context.arc(x, y + dy, r, 0, 2 * Math.PI);
-      context.fillText('航班到达城市（越大航班数越多）', x + r + 10, y + dy + 5);
-      context.fill();
-    }
 
     const sphere: any = { type: "Sphere" };
     context.beginPath(); context.fillStyle = OCEAN_COLOR; path(sphere); context.fill();
@@ -267,6 +248,7 @@ class Earth extends React.Component<Props, {}> {
 
     if (!this.currentArea) {
       this.drawAirlines();
+      this.renderLegend(context);
       return
     }
 
@@ -286,10 +268,32 @@ class Earth extends React.Component<Props, {}> {
       context.fillStyle = HIGHLIGHT_COLOR;
       path.pointRadius(this.originPointRadius as number);
       path(this.currentArea as any);
-      context.fill()
+      context.fill();
     }
+    
+    this.renderLegend(context);
   }
   
+  private renderLegend = (context: CanvasRenderingContext2D) => {
+    // legend
+    const x = 40, y = 150, r = 20, dy = 45;
+    if (this.showBubblesOut) {
+      context.beginPath();
+      context.font = '18px SimHei';
+      context.fillStyle = BUBBLE_OUT_COLOR;
+      context.arc(x, y, r, 0, 2 * Math.PI);
+      context.fillText('航班出发城市(越大航班数越多)', x + r + 10, y + 5);
+      context.fill();
+    }
+    if (this.showBubblesIn) {
+      context.beginPath();
+      context.fillStyle = BUBBLE_IN_COLOR;
+      context.font = '18px SimHei';
+      context.arc(x, y + dy, r, 0, 2 * Math.PI);
+      context.fillText('航班到达城市(越大航班数越多)', x + r + 10, y + dy + 5);
+      context.fill();
+    }
+  };
   
   // render the star background
   private backgroundRender = () => {
@@ -533,6 +537,8 @@ class Earth extends React.Component<Props, {}> {
 
     this.rotatingBeforeDrag = this.rotating;
     this.stopRotation();
+    
+    this.canvas.style('cursor', 'move')
   };
   
   private getCenter = () => {
@@ -555,7 +561,8 @@ class Earth extends React.Component<Props, {}> {
 
   private dragended = () => {
     if (this.rotatingBeforeDrag)
-      this.startRotation(this.rotationDelay)
+      this.startRotation(this.rotationDelay);
+    this.canvas.style('cursor', 'auto')
   };
 
   private onMouseMove = () => {

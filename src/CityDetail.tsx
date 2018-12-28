@@ -124,7 +124,7 @@ class CityDetail extends React.Component<Props, {}>{
       .attr("d", arc as any)
       .style('stroke', '#fff')
       .attr("fill-rule", "evenodd")
-      .style("opacity", 1)
+      .style("opacity", 0.5)
       .style("fill", (d) => {
         return color(d.data.name)
       })
@@ -134,7 +134,11 @@ class CityDetail extends React.Component<Props, {}>{
     ;
     path.append('text')
       .filter((d: any) => { return d.parent; })
-      .text(d => d.data.name)
+      .text((d: any) => {
+        const rate = d.value / d.parent.value * 150;
+        const len = d.data.name.length;
+        return len > rate? '' : d.data.name;
+      })
       .attr('dx', d => {
         const len = d.data.name.length;
         return -len * 4.5;
@@ -168,7 +172,7 @@ class CityDetail extends React.Component<Props, {}>{
   
   private onMouseLeave = () => {
     this.group.selectAll('path')
-      .style('opacity', 1);
+      .style('opacity', 0.5);
   };
   
   private computeTextRotation = (d: any) => {
