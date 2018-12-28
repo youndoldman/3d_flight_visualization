@@ -4211,29 +4211,6 @@
     {
         "num": 3,
         "start": {
-            "name": "Hilton Head Island",
-            "coordinates": [
-                -80.6973889,
-                32.2245
-            ],
-            "state": "South-Carolina",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "Xining",
-            "coordinates": [
-                102.042778,
-                36.5275
-            ],
-            "state": "Qinghai",
-            "countryEng": "China",
-            "countryChi": "中国"
-        }
-    },
-    {
-        "num": 3,
-        "start": {
             "name": "Jinan",
             "coordinates": [
                 117.215994,
@@ -9869,29 +9846,6 @@
     {
         "num": 2,
         "start": {
-            "name": "Las Vegas",
-            "coordinates": [
-                -115.15225,
-                36.0800556
-            ],
-            "state": "Nevada",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Okinawa",
-            "countryEng": "Japan",
-            "countryChi": "日本"
-        }
-    },
-    {
-        "num": 2,
-        "start": {
             "name": "Phoenix",
             "coordinates": [
                 -112.0115833,
@@ -10462,29 +10416,6 @@
             "state": "Makkah",
             "countryEng": "Saudi Arabia",
             "countryChi": "沙特阿拉伯"
-        }
-    },
-    {
-        "num": 2,
-        "start": {
-            "name": "Washington",
-            "coordinates": [
-                -77.4599444,
-                38.9474444
-            ],
-            "state": "Virginia",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "Chengdu",
-            "coordinates": [
-                103.947086,
-                30.578528
-            ],
-            "state": "Sichuan",
-            "countryEng": "China",
-            "countryChi": "中国"
         }
     },
     {
@@ -12100,52 +12031,6 @@
     {
         "num": 2,
         "start": {
-            "name": "Sundsvall/ Harnosand",
-            "coordinates": [
-                17.443928,
-                62.528125
-            ],
-            "state": "Vaesternorrland",
-            "countryEng": "Sweden",
-            "countryChi": "瑞典"
-        },
-        "end": {
-            "name": "Salt Lake City",
-            "coordinates": [
-                -111.9777733,
-                40.7883933
-            ],
-            "state": "Utah",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        }
-    },
-    {
-        "num": 2,
-        "start": {
-            "name": "Salt Lake City",
-            "coordinates": [
-                -111.9777733,
-                40.7883933
-            ],
-            "state": "Utah",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "Amsterdam",
-            "coordinates": [
-                4.763889,
-                52.308613
-            ],
-            "state": "North-Holland",
-            "countryEng": "Netherlands",
-            "countryChi": "荷兰"
-        }
-    },
-    {
-        "num": 2,
-        "start": {
             "name": "Charlotte",
             "coordinates": [
                 -80.9490556,
@@ -13337,6 +13222,29 @@
             "state": "Luxembourg",
             "countryEng": "Luxembourg",
             "countryChi": "卢森堡"
+        }
+    },
+    {
+        "num": 2,
+        "start": {
+            "name": "Salt Lake City",
+            "coordinates": [
+                -111.9777733,
+                40.7883933
+            ],
+            "state": "Utah",
+            "countryEng": "United States of America (USA)",
+            "countryChi": "美国"
+        },
+        "end": {
+            "name": "Amsterdam",
+            "coordinates": [
+                4.763889,
+                52.308613
+            ],
+            "state": "North-Holland",
+            "countryEng": "Netherlands",
+            "countryChi": "荷兰"
         }
     },
     {
@@ -14901,6 +14809,29 @@
             "state": "Istanbul",
             "countryEng": "Turkey",
             "countryChi": "土耳其"
+        }
+    },
+    {
+        "num": 1,
+        "start": {
+            "name": "Cairns",
+            "coordinates": [
+                145.755278,
+                -16.885833
+            ],
+            "state": "Queensland",
+            "countryEng": "Australia",
+            "countryChi": "澳大利亚"
+        },
+        "end": {
+            "name": "Austin",
+            "coordinates": [
+                -97.6698761,
+                30.1945272
+            ],
+            "state": "Texas",
+            "countryEng": "United States of America (USA)",
+            "countryChi": "美国"
         }
     },
     {
@@ -23081,29 +23012,6 @@
             "countryChi": "韩国"
         },
         "end": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Shizuoka",
-            "countryEng": "Japan",
-            "countryChi": "日本"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Seoul",
-            "coordinates": [
-                126.790586,
-                37.558311
-            ],
-            "state": "Seoul",
-            "countryEng": "South Korea",
-            "countryChi": "韩国"
-        },
-        "end": {
             "name": "Tianjin",
             "coordinates": [
                 117.346181,
@@ -30562,29 +30470,6 @@
                 28.5665
             ],
             "state": "NCT",
-            "countryEng": "India",
-            "countryChi": "印度"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Bangkok",
-            "coordinates": [
-                100.747283,
-                13.681108
-            ],
-            "state": "Samut-Prakan",
-            "countryEng": "Thailand",
-            "countryChi": "泰国"
-        },
-        "end": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Bihar",
             "countryEng": "India",
             "countryChi": "印度"
         }
@@ -38315,29 +38200,6 @@
             "state": "Nuevo-Leon",
             "countryEng": "Mexico",
             "countryChi": "墨西哥"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Atlanta",
-            "coordinates": [
-                -84.427864,
-                33.6366996
-            ],
-            "state": "Georgia",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "Sundsvall/ Harnosand",
-            "coordinates": [
-                17.443928,
-                62.528125
-            ],
-            "state": "Vaesternorrland",
-            "countryEng": "Sweden",
-            "countryChi": "瑞典"
         }
     },
     {
@@ -49314,75 +49176,6 @@
     {
         "num": 1,
         "start": {
-            "name": "Sundsvall/ Harnosand",
-            "coordinates": [
-                17.443928,
-                62.528125
-            ],
-            "state": "Vaesternorrland",
-            "countryEng": "Sweden",
-            "countryChi": "瑞典"
-        },
-        "end": {
-            "name": "Austin",
-            "coordinates": [
-                -97.6698761,
-                30.1945272
-            ],
-            "state": "Texas",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Sundsvall/ Harnosand",
-            "coordinates": [
-                17.443928,
-                62.528125
-            ],
-            "state": "Vaesternorrland",
-            "countryEng": "Sweden",
-            "countryChi": "瑞典"
-        },
-        "end": {
-            "name": "Midland",
-            "coordinates": [
-                -102.1015276,
-                32.0365704
-            ],
-            "state": "Texas",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Salt Lake City",
-            "coordinates": [
-                -111.9777733,
-                40.7883933
-            ],
-            "state": "Utah",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "Paris",
-            "coordinates": [
-                2.55,
-                49.012779
-            ],
-            "state": "Ile-de-France",
-            "countryEng": "France",
-            "countryChi": "法国 法国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
             "name": "Charlotte",
             "coordinates": [
                 -80.9490556,
@@ -52195,6 +51988,29 @@
                 39.7173056
             ],
             "state": "Indiana",
+            "countryEng": "United States of America (USA)",
+            "countryChi": "美国"
+        },
+        "end": {
+            "name": "Paris",
+            "coordinates": [
+                2.55,
+                49.012779
+            ],
+            "state": "Ile-de-France",
+            "countryEng": "France",
+            "countryChi": "法国 法国"
+        }
+    },
+    {
+        "num": 1,
+        "start": {
+            "name": "Salt Lake City",
+            "coordinates": [
+                -111.9777733,
+                40.7883933
+            ],
+            "state": "Utah",
             "countryEng": "United States of America (USA)",
             "countryChi": "美国"
         },
@@ -57203,75 +57019,6 @@
     {
         "num": 1,
         "start": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Okinawa",
-            "countryEng": "Japan",
-            "countryChi": "日本"
-        },
-        "end": {
-            "name": "Macon",
-            "coordinates": [
-                -83.6492222,
-                32.6928333
-            ],
-            "state": "Georgia",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Okinawa",
-            "countryEng": "Japan",
-            "countryChi": "日本"
-        },
-        "end": {
-            "name": "Cairo",
-            "coordinates": [
-                31.405556,
-                30.121944
-            ],
-            "state": "Cairo",
-            "countryEng": "Egypt",
-            "countryChi": "埃及"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Okinawa",
-            "countryEng": "Japan",
-            "countryChi": "日本"
-        },
-        "end": {
-            "name": "Istanbul",
-            "coordinates": [
-                28.821111,
-                40.976892
-            ],
-            "state": "Istanbul",
-            "countryEng": "Turkey",
-            "countryChi": "土耳其"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
             "name": "Yanji",
             "coordinates": [
                 129.451258,
@@ -57824,29 +57571,6 @@
     {
         "num": 1,
         "start": {
-            "name": "Austin",
-            "coordinates": [
-                -97.6698761,
-                30.1945272
-            ],
-            "state": "Texas",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "London",
-            "coordinates": [
-                -0.461389,
-                51.4775
-            ],
-            "state": "England",
-            "countryEng": "Great Britain (United Kingdom; England)",
-            "countryChi": "英国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
             "name": "San Diego",
             "coordinates": [
                 -117.1896667,
@@ -58095,6 +57819,29 @@
             "state": "Mexico",
             "countryEng": "Mexico",
             "countryChi": "墨西哥"
+        }
+    },
+    {
+        "num": 1,
+        "start": {
+            "name": "Austin",
+            "coordinates": [
+                -97.6698761,
+                30.1945272
+            ],
+            "state": "Texas",
+            "countryEng": "United States of America (USA)",
+            "countryChi": "美国"
+        },
+        "end": {
+            "name": "London",
+            "coordinates": [
+                -0.461389,
+                51.4775
+            ],
+            "state": "England",
+            "countryEng": "Great Britain (United Kingdom; England)",
+            "countryChi": "英国"
         }
     },
     {
@@ -59843,29 +59590,6 @@
             "state": "Leinster",
             "countryEng": "Ireland",
             "countryChi": "爱尔兰"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Hartford",
-            "coordinates": [
-                -72.6833611,
-                41.9391389
-            ],
-            "state": "Connecticut",
-            "countryEng": "United States of America (USA)",
-            "countryChi": "美国"
-        },
-        "end": {
-            "name": "",
-            "coordinates": [
-                127.767633,
-                26.355612
-            ],
-            "state": "Abu-Dhabi",
-            "countryEng": "United Arab Emirates",
-            "countryChi": "阿联酋"
         }
     },
     {
@@ -62166,29 +61890,6 @@
             "state": "Yunnan",
             "countryEng": "China",
             "countryChi": "中国"
-        }
-    },
-    {
-        "num": 1,
-        "start": {
-            "name": "Paro",
-            "coordinates": [
-                -90.4025,
-                45.7088333
-            ],
-            "state": "Paro",
-            "countryEng": "Bhutan",
-            "countryChi": "不丹"
-        },
-        "end": {
-            "name": "Kathmandu",
-            "coordinates": [
-                85.359192,
-                27.696592
-            ],
-            "state": "Central-Region",
-            "countryEng": "Nepal",
-            "countryChi": "尼泊尔"
         }
     },
     {

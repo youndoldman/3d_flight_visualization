@@ -24,6 +24,7 @@ for index, airline in enumerate(airlines):
     if start_city not in airlines_city_dict:
         airlines_city_dict[start_city] = {
             'num': 0,
+            'num_in': 0,
             'end': {},
             'coordinates': airline['start'],
             'state': properties['startAirport']['state'],
@@ -34,6 +35,7 @@ for index, airline in enumerate(airlines):
     if end_city not in airlines_city_dict:
         airlines_city_dict[end_city] = {
             'num': 0,
+            'num_in': 0,
             'end': {},
             'coordinates': airline['end'],
             'state': properties['endAirport']['state'],
@@ -52,6 +54,7 @@ for index, airline in enumerate(airlines):
         }
 
     airlines_city_dict[start_city]['num'] += properties['size']
+    airlines_city_dict[end_city]['num_in'] += properties['size']
     airlines_city_dict[start_city]['end'][end_city]['num'] += properties['size']
     airlines_city_dict[start_city]['end'][end_city]['list'].append({
         'startAirport': properties['startAirport']['name'],

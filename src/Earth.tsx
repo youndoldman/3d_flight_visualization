@@ -4,6 +4,7 @@ import './Switch.css'
 import './RangeInput.css'
 
 import * as wholeAirLines from './data/airlines_list_clustered_by_city.json'
+import * as wholeAirlinesDict from './data/airlines_dict_clustered_by_city.json'
 
 import * as d3 from 'd3'
 import {event, geoDistance, GeoPath, polygonContains} from 'd3'
@@ -11,7 +12,7 @@ import {City, Airline, Pos, GeoPoint, GeoLine} from './Interface';
 import CityDetail from "./CityDetail";
 import CityToCityDetail from "./CityToCityDetail";
 import {ChangeEvent} from "react";
-import {getGeoJsonForAirline, getGeoJsonForCity} from "./Util";
+import {getGeoJsonForAirline} from "./Util";
 
 interface Props {
   // interface
@@ -34,7 +35,7 @@ const LAND_COLOR  = '#000000';
 const AIRLINE_COLOR = '#ffffff';
 const HIGHLIGHT_AIRLINE_COLOR = '#0a0';
 const NOT_HIGHLIGHT_AIRLINE_COLOR = '#555';
-const TRANSPARENT_AIRLINE_COLOR = 'rgba(5, 5, 5, 0.2)';
+const TRANSPARENT_AIRLINE_COLOR = 'rgba(200, 200, 200, 0.1)';
 const AIRLINE_WIDTH = 0.6;
 const BORDER_WIDTH = 0.2;
 const BORDER_COLOR = '#dcdcdc';
@@ -42,6 +43,8 @@ const HIGHLIGHT_COLOR = '#a00';
 const POINT_COLOR = '#0a0';
 const HIGHLIGHT_POINT_COLOR = '#FFFF00';
 const NOT_HIGHLIGHT_POINT_COLOR = '#333';
+const BUBBLE_IN_COLOR = 'rgb(128,0,0, 0.8)';
+const BUBBLE_OUT_COLOR = 'rgb(255,255,224, 0.8)';
 
 const CHINA_ID = 156;
 const USA_ID = 840;
@@ -58,6 +61,8 @@ class Earth extends React.Component<Props, {}> {
 
   threeDi = true;
   useAttention = true; // 当地球较大时，降低/维持起点不在当前视窗内的航线的对比度
+  showBubblesOut = false; // 显示城市气泡（大小为从此出发的航班数）
+  showBubblesIn = false; // 显示城市气泡（大小为到此的航班数）
 
   // ms to wait after dragging before auto-rotating
   rotationDelay = 3 * 1000;
@@ -119,14 +124,20 @@ class Earth extends React.Component<Props, {}> {
     this.lines = props.airlineGeoData.lines;
     this.points = props.airlineGeoData.points;
   }
+  
+  private showCityToCityDetail = (startCityName: string, endCityName: string) => {
+    this.cityToCityDetail.show(startCityName, endCityName);
+  };
 
   render() {
     return (
       <div id='globe'>
         <canvas id='backgroundCanvas'/>
         <canvas id='canvas'/>
-        <CityDetail ref={(r) => this.cityDetail = r!}/>
-        <CityToCityDetail ref={(r) => this.cityToCityDetail = r!}/>
+        <div className="Container right_top_container">
+          <CityDetail showCityToCityDetail={this.showCityToCityDetail} ref={(r) => this.cityDetail = r!}/>
+          <CityToCityDetail ref={(r) => this.cityToCityDetail = r!}/>
+        </div>
         <div className='Container Left_top_container'>
           <div className="Switch" title={"3D/2D切换"}>
             <input defaultChecked={true} className="Switch-checkbox" id="3DSwitch" type="checkbox"
@@ -153,6 +164,22 @@ class Earth extends React.Component<Props, {}> {
             onChange={() => this.useAttention = !this.useAttention}/>
             <label className="Switch-label" htmlFor="useAttention">
               <span className="Switch-inner" data-on="低对比" data-off="原对比"/>
+              <span className="Switch-switch"/>
+            </label>
+          </div>
+          <div className="Switch" title={"航线出发城市气泡图"}>
+            <input defaultChecked={false} className="Switch-checkbox" id="showBubblesOut" type="checkbox"
+                   onChange={() => this.showBubblesIn = !this.showBubblesIn}/>
+            <label className="Switch-label" htmlFor="showBubblesOut">
+              <span className="Switch-inner" data-on="气泡图1" data-off="气泡图1"/>
+              <span className="Switch-switch"/>
+            </label>
+          </div>
+          <div className="Switch" title={"航线到达城市气泡图"}>
+            <input defaultChecked={false} className="Switch-checkbox" id="showBubblesIn" type="checkbox"
+                   onChange={() => this.showBubblesOut = !this.showBubblesOut}/>
+            <label className="Switch-label" htmlFor="showBubblesIn">
+              <span className="Switch-inner" data-on="气泡图2" data-off="气泡图2"/>
               <span className="Switch-switch"/>
             </label>
           </div>
@@ -186,6 +213,25 @@ class Earth extends React.Component<Props, {}> {
     const path = this.path;
   
     context.clearRect(0, 0, this.width, this.height);
+  
+    // legend
+    const x = this.width - 300, y = 20, r = 20, dy = 45;
+    if (this.showBubblesOut) {
+      context.beginPath();
+      context.font = '18px Airal';
+      context.fillStyle = BUBBLE_OUT_COLOR;
+      context.arc(x, y, r, 0, 2 * Math.PI);
+      context.fillText('航班出发城市（越大航班数越多）', x + r + 10, y + 5);
+      context.fill();
+    }
+    if (this.showBubblesIn) {
+      context.beginPath();
+      context.fillStyle = BUBBLE_IN_COLOR;
+      context.font = '18px Airal';
+      context.arc(x, y + dy, r, 0, 2 * Math.PI);
+      context.fillText('航班到达城市（越大航班数越多）', x + r + 10, y + dy + 5);
+      context.fill();
+    }
 
     const sphere: any = { type: "Sphere" };
     context.beginPath(); context.fillStyle = OCEAN_COLOR; path(sphere); context.fill();
@@ -204,7 +250,7 @@ class Earth extends React.Component<Props, {}> {
     });
 
     if (this.showChina) {
-      this.china.forEach((d, i) => {
+      this.china.forEach((d) => {
         context.beginPath();
         path(d as any);
         context.stroke()
@@ -212,7 +258,7 @@ class Earth extends React.Component<Props, {}> {
     }
 
     if (this.showUsa) {
-      this.usa.forEach((d, i) => {
+      this.usa.forEach((d) => {
         context.beginPath();
         path(d as any);
         context.stroke()
@@ -282,21 +328,49 @@ class Earth extends React.Component<Props, {}> {
   private drawAirlines = () => {
     const context = this.context;
     const path = this.path;
-
+    
+    if (this.showBubblesOut) {
+      context.fillStyle = BUBBLE_OUT_COLOR;
+      for (const startCityName in wholeAirlinesDict) {
+        path.pointRadius(wholeAirlinesDict[startCityName].num / 5);
+        context.beginPath();
+        path({
+          type: 'Feature',
+          geometry: {type: 'Point', coordinates: wholeAirlinesDict[startCityName].coordinates},
+        } as any);
+        context.fill();
+      }
+    }
+    if (this.showBubblesIn) {
+      context.fillStyle = BUBBLE_IN_COLOR;
+      for (const startCityName in wholeAirlinesDict) {
+        path.pointRadius(wholeAirlinesDict[startCityName].num_in / 5);
+        context.beginPath();
+        path({
+          type: 'Feature',
+          geometry: {type: 'Point', coordinates: wholeAirlinesDict[startCityName].coordinates},
+        } as any);
+        context.fill();
+      }
+    }
+    
+    if (this.showBubblesIn || this.showBubblesOut)
+      return;
+    
     const cityChosenId = this.cityChosen ? this.cityChosen.properties.id : -1;
     const secondChosenId = this.secondCityChosen ? this.secondCityChosen.properties.id : -1;
-  
+
     // draw cities
     this.path.pointRadius(this.originPointRadius as number);
     context.fillStyle = this.cityChosen? NOT_HIGHLIGHT_POINT_COLOR : POINT_COLOR;
     this.points.forEach(d => {
       context.beginPath(); path(d as any); context.fill()
     });
-    
+
     const scale = this.projection.scale();
     const attention = this.useAttention && scale > 1000;
     const center = this.getCenter();
-    
+
     const defaultStrokeColor = this.cityChosen ? NOT_HIGHLIGHT_AIRLINE_COLOR : AIRLINE_COLOR;
     context.strokeStyle = defaultStrokeColor;
     const defaultFillColor = this.cityChosen ? NOT_HIGHLIGHT_AIRLINE_COLOR :AIRLINE_COLOR;
@@ -305,24 +379,24 @@ class Earth extends React.Component<Props, {}> {
     this.lines.forEach(d => {
       const startCityId = d.properties.startCityId;
       const endCityId = d.properties.endCityId;
-  
+
       // choose two cities
       if (this.cityChosen && this.secondCityChosen && cityChosenId == startCityId &&
         secondChosenId == endCityId)
         return;
-  
+
       // choose one city
       if (this.cityChosen && !this.secondCityChosen && cityChosenId == startCityId)
         return;
-      
-      if (attention && geoDistance(center, d.geometry.coordinates[0]) > 300 / scale) {
+
+      if (attention && geoDistance(center, d.geometry.coordinates[0]) > 600 / scale) {
         context.strokeStyle = TRANSPARENT_AIRLINE_COLOR;
         context.fillStyle = TRANSPARENT_AIRLINE_COLOR;
       } else {
         context.strokeStyle = defaultStrokeColor;
         context.fillStyle = defaultFillColor;
       }
-  
+
       // context.lineWidth = AIRLINE_WIDTH
       context.lineWidth = AIRLINE_WIDTH * d.properties.num;
       context.beginPath(); path(d as any); context.stroke();
@@ -407,7 +481,6 @@ class Earth extends React.Component<Props, {}> {
     // draw background
     this.backgroundRender();
     
-    // this.canvasRender()
     this.animation();
   };
 
@@ -435,7 +508,6 @@ class Earth extends React.Component<Props, {}> {
     }
 
     this.rotating = newScale < this.stopRotatingFactor;
-    console.log(this.projection.scale(), this.getCenter())
   };
 
   private animation = () => {
@@ -478,8 +550,6 @@ class Earth extends React.Component<Props, {}> {
     this.projection.rotate(r1);
     // if (!this.threeD)
     //   this.projection.translate(t1)
-    this.canvasRender();
-
     this.r0 = r1
   };
 
@@ -519,7 +589,6 @@ class Earth extends React.Component<Props, {}> {
   private onClick = () => {
     let pos = this.projection.invert!(d3.mouse(this.canvas.node() as any))!;
     const city = this.getPoint(pos);
-    console.log(city)
     if (this.cityChosen && city && this.cityChosen.properties.id != city.properties.id) {
       this.secondCityChosen = city;
       const airlines = wholeAirLines.filter(l => l.start.name == (this.cityChosen!).properties.name
@@ -528,7 +597,7 @@ class Earth extends React.Component<Props, {}> {
       this.highLightPoints[1] = city;
       
       this.cityDetail.hide();
-      this.cityToCityDetail.show(this.cityChosen, this.secondCityChosen);
+      this.cityToCityDetail.show(this.cityChosen.properties.name, this.secondCityChosen.properties.name);
     } else {
       this.cityChosen = city;
       this.secondCityChosen = undefined;
@@ -536,10 +605,7 @@ class Earth extends React.Component<Props, {}> {
         this.cityDetail.show(this.cityChosen);
         const airlines = wholeAirLines.filter(l => l.start.name == (this.cityChosen!).properties.name) as Airline[];
         this.highLightAirlines = airlines.map(l => getGeoJsonForAirline(l));
-        this.highLightPoints = [city!]
-        
-        console.log(geoDistance(this.getCenter(), this.cityChosen.geometry.coordinates), 300 / this.projection.scale())
-        
+        this.highLightPoints = [city!];
       } else {
         this.highLightAirlines = [];
         this.highLightPoints = [];

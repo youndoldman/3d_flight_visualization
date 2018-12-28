@@ -10,10 +10,10 @@ class CityToCityDetail extends React.Component<{}, {}> {
   endCityName = '';
   group: d3.Selection<SVGGElement, {}, HTMLElement, any>;
   
-  public show = (startCity: GeoPoint, endCity: GeoPoint) => {
+  public show = (startCityName: string, endCityName: string) => {
     this.clear();
-    this.startCityName = startCity.properties.name;
-    this.endCityName = endCity.properties.name;
+    this.startCityName = startCityName;
+    this.endCityName = endCityName;
   
     const data = {name: this.startCityName, children: []};
     const children = data.children as any[];
@@ -87,7 +87,8 @@ class CityToCityDetail extends React.Component<{}, {}> {
 
   render() {
     return (
-      <div className='Container City-detail-container' id='citys_detail_container' style={{display: 'none'}}>
+      <div className='City-detail-container' id='citys_detail_container'
+           style={{display: 'none', height: window.innerHeight / 2}}>
         <img src={icon} onClick={() => this.hide()}/>
         <svg id='citys_detail_svg'/>
         <div className="explanation">
@@ -128,7 +129,7 @@ class CityToCityDetail extends React.Component<{}, {}> {
       .sum(function (d: any) { return d.size})
     ;
   
-    const ys = [0, 150, 200, 248];
+    const ys = [0, 150, 190, 230];
     function innerR(d: any) {
       return ys[d.depth] + 1
     }

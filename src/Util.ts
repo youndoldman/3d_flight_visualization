@@ -114,7 +114,7 @@ export function getCities(airlines: Airline[]): City[] {
     })
   });
   let helper = new Map();
-  cities = cities.filter(c => !helper.get(c.name) && helper.set(c.name, 1))
+  cities = cities.filter(c => !helper.get(c.name) && helper.set(c.name, 1));
   console.log(cities.length);
   return cities
 }

@@ -4,7 +4,11 @@ import * as d3 from 'd3'
 import * as wholeAirLinesDict from './data/airlines_dict_clustered_by_city.json'
 import icon from './images/cancel.png'
 
-class CityDetail extends React.Component<{}, {}>{
+interface Props {
+  showCityToCityDetail: (startCityName: string, endCityName: string) => void
+}
+
+class CityDetail extends React.Component<Props, {}>{
   
   cityName: string = '';
   group: d3.Selection<SVGGElement, {}, HTMLElement, any>;
@@ -59,7 +63,8 @@ class CityDetail extends React.Component<{}, {}>{
 
   render() {
     return  (
-      <div className='Container City-detail-container' id='city_detail_container' style={{display: 'none'}}>
+      <div className='City-detail-container' id='city_detail_container'
+           style={{display: 'none', height: window.innerHeight / 2}}>
         <svg id='city_detail_svg'/>
         <img src={icon} onClick={() => this.hide()}/>
         <div className="explanation">
@@ -125,6 +130,7 @@ class CityDetail extends React.Component<{}, {}>{
       })
       .text(d => d.data.name)
       .on("mouseover", this.onMouseOver)
+      .on('dblclick', this.onClick)
     ;
     path.append('text')
       .filter((d: any) => { return d.parent; })
@@ -137,6 +143,10 @@ class CityDetail extends React.Component<{}, {}>{
       .attr('transform', (d: any) =>
         'translate(' + arc.centroid(d) + ')rotate(' + this.computeTextRotation(d) + ')'
       )
+  };
+  
+  private onClick = (d: any) => {
+    this.props.showCityToCityDetail(this.cityName, d.data.name);
   };
   
   private onMouseOver = (d: any) => {

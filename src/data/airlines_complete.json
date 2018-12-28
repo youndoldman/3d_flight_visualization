@@ -5107,43 +5107,6 @@
     },
     {
         "start": [
-            -80.6973889,
-            32.2245
-        ],
-        "end": [
-            102.042778,
-            36.5275
-        ],
-        "properties": {
-            "size": 3,
-            "startAirport": {
-                "coordinates": [
-                    -80.6973889,
-                    32.2245
-                ],
-                "name": "Hilton Head Airport",
-                "city": "Hilton Head Island",
-                "state": "South-Carolina",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    102.042778,
-                    36.5275
-                ],
-                "name": "Xining Caojiabu Airport",
-                "city": "Xining",
-                "state": "Qinghai",
-                "countryEng": "China",
-                "countryChi": "中国"
-            },
-            "startCity": "Hilton Head Island",
-            "endCity": "Xining"
-        }
-    },
-    {
-        "start": [
             117.215994,
             36.856561
         ],
@@ -6805,43 +6768,6 @@
             },
             "startCity": "Seattle",
             "endCity": "San Jose del Cabo"
-        }
-    },
-    {
-        "start": [
-            17.443928,
-            62.528125
-        ],
-        "end": [
-            -111.9777733,
-            40.7883933
-        ],
-        "properties": {
-            "size": 2,
-            "startAirport": {
-                "coordinates": [
-                    17.443928,
-                    62.528125
-                ],
-                "name": "Sundsvall-Harnosand Airport",
-                "city": "Sundsvall/ Harnosand",
-                "state": "Vaesternorrland",
-                "countryEng": "Sweden",
-                "countryChi": "瑞典"
-            },
-            "endAirport": {
-                "coordinates": [
-                    -111.9777733,
-                    40.7883933
-                ],
-                "name": "Salt Lake City International Airport",
-                "city": "Salt Lake City",
-                "state": "Utah",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "startCity": "Sundsvall/ Harnosand",
-            "endCity": "Salt Lake City"
         }
     },
     {
@@ -14468,43 +14394,6 @@
     },
     {
         "start": [
-            -87.1297322,
-            38.7004233
-        ],
-        "end": [
-            103.947086,
-            30.578528
-        ],
-        "properties": {
-            "size": 2,
-            "startAirport": {
-                "coordinates": [
-                    -87.1297322,
-                    38.7004233
-                ],
-                "name": "Daviess County Airport",
-                "city": "Washington",
-                "state": "Indiana",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    103.947086,
-                    30.578528
-                ],
-                "name": "Chengdu Shuangliu International Airport",
-                "city": "Chengdu",
-                "state": "Sichuan",
-                "countryEng": "China",
-                "countryChi": "中国"
-            },
-            "startCity": "Washington",
-            "endCity": "Chengdu"
-        }
-    },
-    {
-        "start": [
             100.747283,
             13.681108
         ],
@@ -21498,43 +21387,6 @@
     },
     {
         "start": [
-            -115.0342556,
-            36.2362
-        ],
-        "end": [
-            127.767633,
-            26.355612
-        ],
-        "properties": {
-            "size": 2,
-            "startAirport": {
-                "coordinates": [
-                    -115.0342556,
-                    36.2362
-                ],
-                "name": "Nellis Air Force Base",
-                "city": "Las Vegas",
-                "state": "Nevada",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    127.767633,
-                    26.355612
-                ],
-                "name": "Kadena Air Base",
-                "city": "",
-                "state": "Okinawa",
-                "countryEng": "Japan",
-                "countryChi": "日本"
-            },
-            "startCity": "Las Vegas",
-            "endCity": ""
-        }
-    },
-    {
-        "start": [
             4.763889,
             52.308613
         ],
@@ -27233,43 +27085,6 @@
     },
     {
         "start": [
-            17.443928,
-            62.528125
-        ],
-        "end": [
-            -97.6698761,
-            30.1945272
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    17.443928,
-                    62.528125
-                ],
-                "name": "Sundsvall-Harnosand Airport",
-                "city": "Sundsvall/ Harnosand",
-                "state": "Vaesternorrland",
-                "countryEng": "Sweden",
-                "countryChi": "瑞典"
-            },
-            "endAirport": {
-                "coordinates": [
-                    -97.6698761,
-                    30.1945272
-                ],
-                "name": "Austin Bergstrom International Airport",
-                "city": "Austin",
-                "state": "Texas",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "startCity": "Sundsvall/ Harnosand",
-            "endCity": "Austin"
-        }
-    },
-    {
-        "start": [
             -97.0376949,
             32.8972316
         ],
@@ -27451,43 +27266,6 @@
             },
             "startCity": "San Diego",
             "endCity": "Frankfurt-am-Main"
-        }
-    },
-    {
-        "start": [
-            -84.3019722,
-            33.8756111
-        ],
-        "end": [
-            17.443928,
-            62.528125
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    -84.3019722,
-                    33.8756111
-                ],
-                "name": "DeKalb Peachtree Airport",
-                "city": "Atlanta",
-                "state": "Georgia",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    17.443928,
-                    62.528125
-                ],
-                "name": "Sundsvall-Harnosand Airport",
-                "city": "Sundsvall/ Harnosand",
-                "state": "Vaesternorrland",
-                "countryEng": "Sweden",
-                "countryChi": "瑞典"
-            },
-            "startCity": "Atlanta",
-            "endCity": "Sundsvall/ Harnosand"
         }
     },
     {
@@ -28117,43 +27895,6 @@
             },
             "startCity": "Liberia",
             "endCity": "Edmonton"
-        }
-    },
-    {
-        "start": [
-            17.443928,
-            62.528125
-        ],
-        "end": [
-            -102.1015276,
-            32.0365704
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    17.443928,
-                    62.528125
-                ],
-                "name": "Sundsvall-Harnosand Airport",
-                "city": "Sundsvall/ Harnosand",
-                "state": "Vaesternorrland",
-                "countryEng": "Sweden",
-                "countryChi": "瑞典"
-            },
-            "endAirport": {
-                "coordinates": [
-                    -102.1015276,
-                    32.0365704
-                ],
-                "name": "Midland Airpark",
-                "city": "Midland",
-                "state": "Texas",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "startCity": "Sundsvall/ Harnosand",
-            "endCity": "Midland"
         }
     },
     {
@@ -29338,43 +29079,6 @@
             },
             "startCity": "Halifax",
             "endCity": "Alabaster"
-        }
-    },
-    {
-        "start": [
-            136.504722,
-            -33.709722
-        ],
-        "end": [
-            -83.6492222,
-            32.6928333
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    136.504722,
-                    -33.709722
-                ],
-                "name": "Cleve Airport",
-                "city": "",
-                "state": "South-Australia",
-                "countryEng": "Australia",
-                "countryChi": "澳大利亚"
-            },
-            "endAirport": {
-                "coordinates": [
-                    -83.6492222,
-                    32.6928333
-                ],
-                "name": "Middle Georgia Regional Airport",
-                "city": "Macon",
-                "state": "Georgia",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "startCity": "",
-            "endCity": "Macon"
         }
     },
     {
@@ -70671,43 +70375,6 @@
     },
     {
         "start": [
-            38.06335,
-            24.144244
-        ],
-        "end": [
-            31.405556,
-            30.121944
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    38.06335,
-                    24.144244
-                ],
-                "name": "Yenbo Airport",
-                "city": "",
-                "state": "Al-Madinah-al-Munawwarah",
-                "countryEng": "Saudi Arabia",
-                "countryChi": "沙特阿拉伯"
-            },
-            "endAirport": {
-                "coordinates": [
-                    31.405556,
-                    30.121944
-                ],
-                "name": "Cairo International Airport",
-                "city": "Cairo",
-                "state": "Cairo",
-                "countryEng": "Egypt",
-                "countryChi": "埃及"
-            },
-            "startCity": "",
-            "endCity": "Cairo"
-        }
-    },
-    {
-        "start": [
             12.655972,
             55.617917
         ],
@@ -72443,43 +72110,6 @@
             },
             "startCity": "Abu Dhabi",
             "endCity": "Chittagong"
-        }
-    },
-    {
-        "start": [
-            -90.4025,
-            45.7088333
-        ],
-        "end": [
-            85.359192,
-            27.696592
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    -90.4025,
-                    45.7088333
-                ],
-                "name": "Paro Airport",
-                "city": "Paro",
-                "state": "Paro",
-                "countryEng": "Bhutan",
-                "countryChi": "不丹"
-            },
-            "endAirport": {
-                "coordinates": [
-                    85.359192,
-                    27.696592
-                ],
-                "name": "Tribhuvan International Airport",
-                "city": "Kathmandu",
-                "state": "Central-Region",
-                "countryEng": "Nepal",
-                "countryChi": "尼泊尔"
-            },
-            "startCity": "Paro",
-            "endCity": "Kathmandu"
         }
     },
     {
@@ -74593,43 +74223,6 @@
     },
     {
         "start": [
-            100.60675,
-            13.912583
-        ],
-        "end": [
-            84.950614,
-            24.743744
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    100.60675,
-                    13.912583
-                ],
-                "name": "Don Mueang International Airport",
-                "city": "Bangkok",
-                "state": "Bangkok",
-                "countryEng": "Thailand",
-                "countryChi": "泰国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    84.950614,
-                    24.743744
-                ],
-                "name": "Gaya Airport",
-                "city": "",
-                "state": "Bihar",
-                "countryEng": "India",
-                "countryChi": "印度"
-            },
-            "startCity": "Bangkok",
-            "endCity": ""
-        }
-    },
-    {
-        "start": [
             16.569722,
             48.110278
         ],
@@ -76550,6 +76143,43 @@
             },
             "startCity": "Nadi",
             "endCity": "Singapore"
+        }
+    },
+    {
+        "start": [
+            145.755278,
+            -16.885833
+        ],
+        "end": [
+            146.19123,
+            -16.88853
+        ],
+        "properties": {
+            "size": 1,
+            "startAirport": {
+                "coordinates": [
+                    145.755278,
+                    -16.885833
+                ],
+                "name": "Cairns International Airport",
+                "city": "Cairns",
+                "state": "Queensland",
+                "countryEng": "Australia",
+                "countryChi": "澳大利亚"
+            },
+            "endAirport": {
+                "coordinates": [
+                    146.19123,
+                    -16.88853
+                ],
+                "name": "Austin Executive Airport",
+                "city": "Austin",
+                "state": "Texas",
+                "countryEng": "United States of America (USA)",
+                "countryChi": "美国"
+            },
+            "startCity": "Cairns",
+            "endCity": "Austin"
         }
     },
     {
@@ -86137,43 +85767,6 @@
     },
     {
         "start": [
-            40.544334,
-            21.483418
-        ],
-        "end": [
-            28.821111,
-            40.976892
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    40.544334,
-                    21.483418
-                ],
-                "name": "Taif Airport",
-                "city": "",
-                "state": "Makkah",
-                "countryEng": "Saudi Arabia",
-                "countryChi": "沙特阿拉伯"
-            },
-            "endAirport": {
-                "coordinates": [
-                    28.821111,
-                    40.976892
-                ],
-                "name": "Ataturk International Airport",
-                "city": "Istanbul",
-                "state": "Istanbul",
-                "countryEng": "Turkey",
-                "countryChi": "土耳其"
-            },
-            "startCity": "",
-            "endCity": "Istanbul"
-        }
-    },
-    {
-        "start": [
             46.698776,
             24.95764
         ],
@@ -89722,43 +89315,6 @@
             },
             "startCity": "Istanbul",
             "endCity": "Tehran"
-        }
-    },
-    {
-        "start": [
-            -72.6833611,
-            41.9391389
-        ],
-        "end": [
-            54.458084,
-            24.428333
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    -72.6833611,
-                    41.9391389
-                ],
-                "name": "Bradley International Airport",
-                "city": "Hartford",
-                "state": "Connecticut",
-                "countryEng": "United States of America (USA)",
-                "countryChi": "美国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    54.458084,
-                    24.428333
-                ],
-                "name": "Bateen Airport",
-                "city": "",
-                "state": "Abu-Dhabi",
-                "countryEng": "United Arab Emirates",
-                "countryChi": "阿联酋"
-            },
-            "startCity": "Hartford",
-            "endCity": ""
         }
     },
     {
@@ -103116,43 +102672,6 @@
             },
             "startCity": "Seoul",
             "endCity": "Changchun"
-        }
-    },
-    {
-        "start": [
-            126.450517,
-            37.469075
-        ],
-        "end": [
-            138.189444,
-            34.7961111
-        ],
-        "properties": {
-            "size": 1,
-            "startAirport": {
-                "coordinates": [
-                    126.450517,
-                    37.469075
-                ],
-                "name": "Incheon International Airport",
-                "city": "Seoul",
-                "state": "Incheon",
-                "countryEng": "South Korea",
-                "countryChi": "韩国"
-            },
-            "endAirport": {
-                "coordinates": [
-                    138.189444,
-                    34.7961111
-                ],
-                "name": "Mt. Fuji Shizuoka Airport",
-                "city": "",
-                "state": "Shizuoka",
-                "countryEng": "Japan",
-                "countryChi": "日本"
-            },
-            "startCity": "Seoul",
-            "endCity": ""
         }
     },
     {
