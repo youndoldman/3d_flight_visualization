@@ -61,8 +61,6 @@ export function getGeoJsonForAirlines(airlines: Airline[], cities: City[]) {
   id = mapMaxId;
   const points: GeoPoint[] = cities.map(city => getGeoJsonForCity(city, id++));
   const lines: GeoLine[] = airlines.map(airline => getGeoJsonForAirline(airline, id++));
-  console.log(cityToId)
-
   return {
     lines,
     points
@@ -115,6 +113,5 @@ export function getCities(airlines: Airline[]): City[] {
   });
   let helper = new Map();
   cities = cities.filter(c => !helper.get(c.name) && helper.set(c.name, 1));
-  console.log(cities.length);
   return cities
 }
