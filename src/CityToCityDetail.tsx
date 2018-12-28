@@ -200,12 +200,12 @@ class CityToCityDetail extends React.Component<{}, {}> {
     
     if (d.depth==1) {
       d3.select('#citys_detail_help1')
-        .text(`从${d.data.name}到${this.endCityName}的航班数:`);
+        .html(`从<strong>${d.data.name}</strong>到<strong>${this.endCityName}</strong>的航班数:`);
       d3.select('#citys_detail_num')
-        .text(`${d.value}`)
+        .html(`${d.value}`)
     } else if (d.depth == 2) {
       d3.select('#citys_detail_help1')
-        .text(`从${d.parent.data.name}到${d.data.name}的航班数:`);
+        .html(`从<strong>${d.parent.data.name}</strong>到<strong>${d.data.name}</strong>的航班数:`);
       d3.select('#citys_detail_num')
         .text(`${d.value}`)
     }

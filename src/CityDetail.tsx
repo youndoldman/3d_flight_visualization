@@ -165,9 +165,9 @@ class CityDetail extends React.Component<Props, {}>{
       .style('opacity', 1);
     
     d3.select('#city_detail_help1')
-      .text(`从${this.cityName}到${d.data.name}的航班数:`)
+      .html(`从<strong>${this.cityName}</strong>到<strong>${d.data.name}</strong>的航班数:`);
     d3.select('#city_detail_num')
-      .text(`${d.data.size}`)
+      .html(`${d.data.size}`)
   };
   
   private onMouseLeave = () => {
