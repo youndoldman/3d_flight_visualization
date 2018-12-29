@@ -276,7 +276,7 @@ class Earth extends React.Component<Props, {}> {
   
   private renderLegend = (context: CanvasRenderingContext2D) => {
     // legend
-    const x = 40, y = 150, r = 20, dy = 45;
+    const x = 40, y = 100, r = 20, dy = 45;
     if (this.showBubblesOut) {
       context.beginPath();
       context.font = '18px SimHei';
